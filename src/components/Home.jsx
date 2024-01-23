@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Typewriter from "typewriter-effect";
-import {BsChevronDown }from "react-icons/bs";
-import {BsArrowUpRight }from "react-icons/bs";
-import logo from "../assets/manish_portfolio.png"
-
+import { BsChevronDown } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
+import logo from "../assets/manish_portfolio.png";
 
 const Home = () => {
   const animations = {
@@ -31,7 +30,7 @@ const Home = () => {
   };
   return (
     <div id="home">
-      <section >
+      <section>
         <div>
           <motion.h1 {...animations.h1}>
             Hi, I Am <br /> Manish Chavan
@@ -56,26 +55,32 @@ const Home = () => {
             </a>
 
             <a href="#work" className="project">
-              Projects <BsArrowUpRight/>
+              Projects <BsArrowUpRight />
             </a>
           </div>
 
-          <article>
-            <p>10+</p>
+          {/* <article>
+            <p>+</p>
             <span>Projects</span>
           </article>
           <article>
             <p>Contact</p>
             <span>manishchavan1799@gmail.com</span>
-          </article>
+          </article> */}
         </div>
       </section>
-      <section >
-        <img src={logo} alt="" style={{
-            filter: 'hue-rotate(90deg)'
-        }} />
+      <section>
+        <img
+          src={logo}
+          alt=""
+          style={{
+            filter: "hue-rotate(90deg)",
+          }}
+        />
       </section>
-      <BsChevronDown className="chevIcon"/>
+      <a href="#work">
+        <BsChevronDown className="chevIcon" />
+      </a>
     </div>
   );
 };

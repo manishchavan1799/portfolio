@@ -6,6 +6,7 @@ nav {
   justify-content: space-between;
   padding: 0 $p;
   position: sticky;
+  background-color: #999999;
   color: white;
   top: 0%;
   z-index: 60;
@@ -17,12 +18,12 @@ nav {
     align-items: center;
     gap: 2rem;
     a {
-      color: $color6;
+      color: white;
       font-weight: 500;
       transition: all 0.3s;
       letter-spacing: 1px;
       &:hover {
-        color: $color3;
+        color: black
       }
     }
   }

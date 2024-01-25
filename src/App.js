@@ -1,6 +1,7 @@
 
+import { useEffect, useState } from "react";
 import Contact from "./components/Contact";
-import Header from "./components/Header";
+import Header,{HeaderPhone} from "./components/Header";
 import Home from "./components/Home";
 import Services from "./components/Services";
 import Timeline from "./components/Timeline";
@@ -10,10 +11,24 @@ import { Toaster } from "react-hot-toast";
 
 
 function App() {
-  return (
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [ratio, setRatio] = useState(window.innerWidth / window.innerHeight);
+  useEffect(() => {
+    const resizeRatio = () => {
+      setRatio(window.innerWidth / window.innerHeight);
+    };
+
+    window.addEventListener("resize", resizeRatio);
+
+    return () => {
+      window.removeEventListener("resize", resizeRatio);
+    };
+  }, [ratio]);
+  return ratio < 2 ? (
     <>
-    
-      <Header />
+          <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Home />
       <Work />
       <Timeline /> 
@@ -21,6 +36,8 @@ function App() {
       <Contact/>
       <Toaster/>
     </>
+  ): (
+    <em id="customMessage">Please Change the ratio to View!</em>
   );
 }
 

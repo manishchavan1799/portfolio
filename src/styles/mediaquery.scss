@@ -222,13 +222,17 @@
           text-align: center;
   
           > div {
+            justify-content: center;
             border: none;
             padding-top: 3rem;
             > h1 {
               font: 900 2.5rem $text1;
             }
             > div {
+                justify-content: flex-end;
               flex-direction: column;
+
+              
             }
             aside {
               align-items: center;

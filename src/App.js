@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Contact from "./components/Contact";
 import Header,{HeaderPhone} from "./components/Header";
 import Home from "./components/Home";
@@ -12,19 +12,20 @@ import { Toaster } from "react-hot-toast";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [ratio, setRatio] = useState(window.innerWidth / window.innerHeight);
-  useEffect(() => {
-    const resizeRatio = () => {
-      setRatio(window.innerWidth / window.innerHeight);
-    };
+  // const [ratio, setRatio] = useState(window.innerWidth / window.innerHeight);
+  // useEffect(() => {
+  //   const resizeRatio = () => {
+  //     setRatio(window.innerWidth / window.innerHeight);
+  //   };
 
-    window.addEventListener("resize", resizeRatio);
+  //   window.addEventListener("resize", resizeRatio);
 
-    return () => {
-      window.removeEventListener("resize", resizeRatio);
-    };
-  }, [ratio]);
-  return ratio < 2 ? (
+  //   return () => {
+  //     window.removeEventListener("resize", resizeRatio);
+  //   };
+  // }, [ratio]);
+  // return ratio < 2 ? (
+    return(
     <>
           <HeaderPhone menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
@@ -36,9 +37,10 @@ function App() {
       <Contact/>
       <Toaster/>
     </>
-  ): (
-    <em id="customMessage">Please Change the ratio to View!</em>
-  );
+  )
+  // : (
+  //   <em id="customMessage">Please Change the ratio to View!</em>
+  // );
 }
 
 export default App;
